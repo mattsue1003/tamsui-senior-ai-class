@@ -82,6 +82,15 @@ table.cmp td:first-child{font-weight:900;white-space:nowrap}
 .app img{width:2.6em;height:2.6em;border-radius:22%;flex:none;box-shadow:0 1px 3px rgba(0,0,0,.2)}
 .app b{display:block;font-size:.88em;line-height:1.25}
 .app span{font-size:.62em;color:var(--ink2);line-height:1.3;display:block}
+.app{flex-wrap:wrap}
+.app .dl{flex-basis:100%;display:flex;gap:6px;margin-top:.15em}
+.app .dl a{flex:1;text-align:center;text-decoration:none;font-weight:900;font-size:.62em;border-radius:999px;padding:.35em .4em;border:2px solid var(--ink);color:var(--ink);background:#fff;white-space:nowrap}
+.app .dl a.ios{border-color:#1d1d1f}
+.app .dl a.and{border-color:#1a7f37;color:#1a7f37}
+body.is-ios .app .dl a.ios,body.is-and .app .dl a.and{background:var(--ink);color:#fff;border-color:var(--ink)}
+body.is-ios .app .dl a.and,body.is-and .app .dl a.ios{opacity:.45}
+.mydev{display:none;font-weight:900;color:var(--rose)}
+body.is-ios .mydev.i,body.is-and .mydev.a{display:inline}
 /* qr */
 .qr{background:#fff;padding:10px;border-radius:8px;box-shadow:var(--shadow);display:inline-block;text-align:center}
 .qr img{width:11em;height:11em;display:block}
@@ -190,16 +199,16 @@ table.cmp td:first-child{font-weight:900;white-space:nowrap}
    <h2>上課前，手機先做 3 件事</h2>
    <ol class="steps" style="--c:var(--leaf)">
     <li><span>連上 <b>Wi-Fi</b>，電量 50% 以上</span></li>
-    <li><span>到 App Store／Play 商店，把 <b>LINE</b>、<b>Google</b>、<b>Gemini</b> 更新到最新版</span></li>
-    <li><span>字太小？到「設定」把<b>字體放大</b>，看得清楚最重要</span></li>
+    <li><span>把 <b>LINE</b>、<b>Google</b>、<b>Gemini</b>、<b>Google 地圖</b> 更新到最新版：點右邊按鈕，商店出現「<b>更新</b>」就按下去（出現「開啟」代表已經是最新版）</span></li>
+    <li><span>字太小？<b>iPhone</b>：設定 → 螢幕顯示與亮度 → 文字大小；<b>Android</b>：設定 → 顯示 → 字型大小（各品牌名稱略不同）</span></li>
    </ol>
    <div class="note">LINE 從 2026 年 3 月起分批換新畫面，所以大家的手機<b>可能長得不一樣</b>，沒關係，找圖示就對了。</div>
   </div>
-  <div class="apps" style="grid-template-columns:1fr 1fr">
-   <div class="app"><img src="img/apps/line.png" alt=""><div><b>LINE</b><span>筆記本群組、掃 QR Code</span></div></div>
-   <div class="app"><img src="img/apps/google.png" alt=""><div><b>Google</b><span>智慧鏡頭、AI 模式</span></div></div>
-   <div class="app"><img src="img/apps/gemini.png" alt=""><div><b>Gemini</b><span>整理影片、畫圖</span></div></div>
-   <div class="app"><img src="img/apps/maps.png" alt=""><div><b>Google 地圖</b><span>找美食、看評分</span></div></div>
+  <div class="apps upd" style="grid-template-columns:1fr 1fr">
+   <div class="app" data-app="line"><img src="img/apps/line.png" alt=""><div><b>LINE</b><span>筆記本群組、掃 QR Code</span></div></div>
+   <div class="app" data-app="google"><img src="img/apps/google.png" alt=""><div><b>Google</b><span>智慧鏡頭、AI 模式</span></div></div>
+   <div class="app" data-app="gemini"><img src="img/apps/gemini.png" alt=""><div><b>Gemini</b><span>整理影片、畫圖</span></div></div>
+   <div class="app" data-app="maps"><img src="img/apps/maps.png" alt=""><div><b>Google 地圖</b><span>找美食、看評分</span></div></div>
   </div>
  </div>
 </section>
@@ -225,7 +234,7 @@ table.cmp td:first-child{font-weight:900;white-space:nowrap}
    <p class="lede">就像 Google Keep：看到好影片、好食譜、回診時間，隨手丟進去，以後要找都在這裡。</p>
    <ul style="padding-left:1.1em">
     <li>群組用<b>自己的名字</b>命名：「<b>阿嬌的筆記本</b>」，一看就記得</li>
-    <li>群組才有 <b>記事本</b> 和 <b>相簿</b>，重要的照片放進去<b>不會消失</b></li>
+    <li>群組裡有 <b>記事本</b> 和 <b>相簿</b>，重要的照片放進去<b>不會消失</b></li>
     <li>手機、電腦版 LINE 都看得到</li>
    </ul>
    <div class="cols three" style="gap:10px;margin-top:.6em">
@@ -245,7 +254,7 @@ table.cmp td:first-child{font-weight:900;white-space:nowrap}
   <h2>開「自己的筆記本」群組：5 個步驟</h2>
   <div class="phones" style="--c:#06a64b">
    <div class="ph"><div class="dev"><div class="scr"><div class="tb">聊天 <span class="hl">＋</span></div><div class="row"><span class="av"></span>家人群組</div><div class="row"><span class="av"></span>阿明</div><div class="bar"><span>主頁</span><span style="color:#06c755">聊天</span><span>錢包</span></div></div></div><div class="cap"><b>①</b>「聊天」右上<br>點「＋」</div></div>
-   <div class="ph"><div class="dev"><div class="scr"><div class="tb">建立聊天室</div><div class="row">👤 加入好友</div><div class="row hl" style="margin:4px">👥 群組</div><div class="row" style="color:#999">社群</div></div></div><div class="cap"><b>②</b>選「群組」</div></div>
+   <div class="ph"><div class="dev"><div class="scr"><div class="tb">建立聊天室</div><div class="row">👤 加入好友</div><div class="row hl" style="margin:4px">👥 群組</div><div class="row" style="color:#999">社群</div></div></div><div class="cap"><b>②</b>點「建立聊天室」<br>再選「群組」</div></div>
    <div class="ph"><div class="dev"><div class="scr"><div class="tb">選擇好友 <span class="hl">下一步</span></div><div class="row" style="color:#999">○ 阿明</div><div class="row" style="color:#999">○ 小芬</div><div class="row" style="color:#999">○ 大哥</div></div></div><div class="cap"><b>③</b><b style="display:inline;font-size:1em">不要選任何人</b><br>直接按「下一步」</div></div>
    <div class="ph"><div class="dev"><div class="scr"><div class="tb">設定群組資料 <span class="hl">建立</span></div><div style="display:grid;place-items:center;padding:12px"><span class="av" style="width:46px;height:46px"></span></div><div class="row hl" style="margin:4px">阿嬌的筆記本</div></div></div><div class="cap"><b>④</b>名字取「○○○的筆記本」<br>按「建立」</div></div>
    <div class="ph"><div class="dev"><div class="scr"><div class="tb">聊天</div><div class="row hl" style="margin:4px">📌 <span class="av"></span>阿嬌的筆記本</div><div class="row"><span class="av"></span>家人群組</div><div class="row"><span class="av"></span>阿明</div></div></div><div class="cap"><b>⑤</b>釘選在最上面<br>每天一打開就看到</div></div>
@@ -272,7 +281,7 @@ table.cmp td:first-child{font-weight:900;white-space:nowrap}
    <ul style="font-size:.85em;padding-left:1.1em;margin:0">
     <li>右上「≡」→ <b>記事本</b> → 寫一篇，可以放文字和照片</li>
     <li>對話裡重要的那一則：<b>長按 → 記事本</b></li>
-    <li>例如：回診時間、用藥清單、家人電話、重要證件<b>影本存放位置</b></li>
+    <li>例如：<b>回診時間、用藥清單、家人電話</b></li>
    </ul>
    <div class="tip" style="font-size:.8em">放進記事本的照片<b>不會過期</b>。</div>
   </div>
@@ -307,9 +316,9 @@ table.cmp td:first-child{font-weight:900;white-space:nowrap}
    <div class="src">出處：165 全民防騙、政府防詐宣導（投資詐騙手法）</div>
   </div>
   <div class="apps" style="grid-template-columns:1fr">
-   <div class="app"><img src="img/apps/npa.png" alt=""><div><b>警政服務 App（內有 165 專區）</b><span>警政署｜可疑訊息分析、詐騙來電排行</span></div></div>
-   <div class="app"><img src="img/apps/fraud.png" alt=""><div><b>網詐通報查詢網</b><span>數位發展部｜查可疑網址、簡訊</span></div></div>
-   <div class="app"><img src="img/apps/whoscall.png" alt=""><div><b>Whoscall</b><span>陌生來電辨識（基本功能免費）</span></div></div>
+   <div class="app" data-app="npa"><img src="img/apps/npa.png" alt=""><div><b>警政服務 App（內有 165 專區）</b><span>警政署｜可疑訊息分析、詐騙來電排行</span></div></div>
+   <div class="app" data-app="fraud"><img src="img/apps/fraud.png" alt=""><div><b>網詐通報查詢網</b><span>數位發展部｜查可疑網址、簡訊</span></div></div>
+   <div class="app" data-app="whoscall"><img src="img/apps/whoscall.png" alt=""><div><b>Whoscall</b><span>陌生來電辨識（基本功能免費）</span></div></div>
   </div>
  </div>
 </section>
@@ -401,9 +410,9 @@ table.cmp td:first-child{font-weight:900;white-space:nowrap}
    <div class="eyebrow" style="--c:var(--rose)"><span class="no">03</span> 實際試試看</div>
    <h2>拍淡水紅毛城</h2>
    <p>名字、地點都對，還附上<b>淡水古蹟博物館</b>的網頁。</p>
-   <div class="warn"><b>但是！</b>它說「最早由西班牙人於 1730 年代興建」——<b>這是錯的</b>。<br>西班牙人在 <b>1628 年</b>建城，荷蘭人 1644 年重建。</div>
+   <div class="warn"><b>但是！</b>它說「最早由西班牙人於 <b>1730 年代</b>興建，後由荷蘭人於 1644 年重建」——<b>年代錯了</b>，還前後矛盾。<br>正確是：西班牙人 <b>1628 年</b>建城；<b>1642 年</b>荷蘭人趕走西班牙人，之後蓋了安東尼堡，就是「紅毛城」。</div>
    <div class="bigq" style="--c:var(--rose)">👉 AI 會出錯，<b>點下面的來源連結</b>再確認一次</div>
-   <div class="src">查證：新北市立淡水古蹟博物館〈紅毛城〉介紹</div>
+   <div class="src">查證：新北市立淡水古蹟博物館〈紅毛城〉介紹（新北市政府文化局景點資料）</div>
   </div>
  </div>
 </section>
@@ -459,7 +468,7 @@ table.cmp td:first-child{font-weight:900;white-space:nowrap}
     <div class="tr" style="top:77.5%"><span>抹茶冰淇淋</span><span>450 日圓</span></div></div>
     <div class="cap">👆 點一下：模擬翻譯模式</div>
    </div>
-   <div><div class="shot"><img src="img/shots/lens_menu_ai.jpg" alt="智慧鏡頭翻譯日文菜單的實際畫面"></div><div class="shotcap">實測：每一道菜都翻對了</div></div>
+   <div><div class="shot"><img src="img/shots/lens_menu_ai.jpg" alt="智慧鏡頭翻譯日文菜單的實際畫面"></div><div class="shotcap">實測：智慧鏡頭把每一道菜都翻出來了</div></div>
   </div>
  </div>
 </section>
@@ -476,7 +485,7 @@ table.cmp td:first-child{font-weight:900;white-space:nowrap}
     <li>孫子的<b>英文作業</b>（選「家庭作業」）</li>
     <li>要跟外國人對話：用 <b>Google 翻譯 App</b> 的「對話」</li>
    </ul>
-   <div class="app" style="max-width:420px"><img src="img/apps/translate.png" alt=""><div><b>Google 翻譯</b><span>相機翻譯、雙向對話翻譯</span></div></div>
+   <div class="app" data-app="translate" style="max-width:420px"><img src="img/apps/translate.png" alt=""><div><b>Google 翻譯</b><span>相機翻譯、雙向對話翻譯</span></div></div>
   </div>
  </div>
 </section>
@@ -524,12 +533,13 @@ table.cmp td:first-child{font-weight:900;white-space:nowrap}
   </div>
   <div>
    <div class="eyebrow" style="--c:#c4302b"><span class="no">06</span> YouTube 重點</div>
-   <h2>20 分鐘影片，<br>1 分鐘看懂重點</h2>
+   <h2>長影片，<br>1 分鐘看懂重點</h2>
    <ol class="steps" style="--c:#c4302b">
     <li><span>在 YouTube 按「<b>分享</b>」→「<b>複製連結</b>」</span></li>
     <li><span>打開 <b>Gemini</b>，貼上連結</span></li>
     <li><span>打字：「<b>用 5 點整理重點，口語、字少一點</b>」</span></li>
    </ol>
+   <div class="tip">懶得找連結？也可以直接說：「幫我找國健署的防跌影片，整理重點」（左邊的畫面就是這樣做的）。</div>
    <div class="note">要先登入，並開啟「保留活動記錄」才能用。用語音聊天（Gemini Live）時不能整理影片。</div>
    <div class="src">出處：Gemini 說明〈搭配 YouTube 使用 Gemini〉support.google.com；實測 2026-11-16</div>
   </div>
@@ -585,7 +595,7 @@ table.cmp td:first-child{font-weight:900;white-space:nowrap}
    <div><div class="shot"><img src="img/shots/gem_food.jpg" alt="Gemini 推薦淡水捷運站附近餐廳"></div><div class="shotcap">① 問 Gemini：「淡水捷運站附近、評分 4.5 以上、適合長輩的午餐」</div></div>
    <div><div class="shot" style="border-color:#fff"><img src="img/shots/maps_food.jpg" alt="Google 地圖淡水捷運站美食與評分"></div><div class="shotcap">② 到 Google 地圖核對：星星、評論數、♿ 無障礙、營業時間</div></div>
   </div>
-  <div class="tip">Google 地圖搜尋後，點上方「<b>評分</b>」選 4.5 以上、「<b>營業時間</b>」選營業中。看到 ♿ 代表輪椅可以進去。</div>
+  <div class="tip">Google 地圖搜尋後，點上方「<b>評分</b>」選 4.5 以上、「<b>營業時間</b>」選營業中。看到 ♿ 代表有無障礙入口，輪椅、助行器比較好進出。</div>
  </div>
 </section>
 
@@ -610,22 +620,24 @@ table.cmp td:first-child{font-weight:900;white-space:nowrap}
 <section class="slide" id="apps" data-title="推薦 App">
  <div class="inner">
   <div class="eyebrow" style="--c:var(--leaf)"><span class="no">08</span> 推薦 App</div>
-  <h2>免費、簡單，iPhone 和 Android 都有</h2>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap"><div><h2 style="margin:0">免費、簡單，iPhone 和 Android 都有</h2>
+  <p style="margin:.2em 0 .6em;font-size:.85em">用手機看這份簡報，點自己手機的按鈕就會打開商店 <span class="mydev i">👉 你的手機是 iPhone，按黑色按鈕</span><span class="mydev a">👉 你的手機是 Android，按黑色按鈕</span></p></div>
+  <div class="qr" style="padding:6px"><img src="img/qr-apps.svg" alt="手機掃描開啟下載頁" style="width:5.5em;height:5.5em"><span style="font-size:.55em;display:block">手機掃這裡<br>直接點下載</span></div></div>
   <div class="apps">
-   <div class="app"><img src="img/apps/nhi.png" alt=""><div><b>健保快易通</b><span>看病紀錄、用藥、檢驗結果、虛擬健保卡</span></div></div>
-   <div class="app"><img src="img/apps/whoscall.png" alt=""><div><b>Whoscall</b><span>陌生電話是不是詐騙</span></div></div>
-   <div class="app"><img src="img/apps/npa.png" alt=""><div><b>警政服務</b><span>165 防詐專區、110 報案</span></div></div>
-   <div class="app"><img src="img/apps/fraud.png" alt=""><div><b>網詐通報查詢網</b><span>查可疑網址、簡訊</span></div></div>
-   <div class="app"><img src="img/apps/cwa.png" alt=""><div><b>中央氣象署 W</b><span>天氣、地震、颱風通知</span></div></div>
-   <div class="app"><img src="img/apps/maps.png" alt=""><div><b>Google 地圖</b><span>找路、找美食、看評分</span></div></div>
-   <div class="app"><img src="img/apps/translate.png" alt=""><div><b>Google 翻譯</b><span>拍菜單、對話翻譯</span></div></div>
-   <div class="app"><img src="img/apps/google.png" alt=""><div><b>Google</b><span>智慧鏡頭、AI 模式</span></div></div>
-   <div class="app"><img src="img/apps/gemini.png" alt=""><div><b>Gemini</b><span>聊天、整理影片、畫圖</span></div></div>
-   <div class="app"><img src="img/apps/merlin.png" alt=""><div><b>Merlin 鳥種識別</b><span>錄鳥叫聲就知道是什麼鳥</span></div></div>
-   <div class="app"><img src="img/apps/seek.png" alt=""><div><b>Seek</b><span>拍花草、昆蟲，免註冊</span></div></div>
-   <div class="app"><img src="img/apps/bus.png" alt=""><div><b>台北等公車</b><span>雙北公車幾分鐘到</span></div></div>
+   <div class="app" data-app="nhi"><img src="img/apps/nhi.png" alt=""><div><b>健保快易通</b><span>看病紀錄、用藥、檢驗結果、虛擬健保卡</span></div></div>
+   <div class="app" data-app="whoscall"><img src="img/apps/whoscall.png" alt=""><div><b>Whoscall</b><span>陌生電話是不是詐騙</span></div></div>
+   <div class="app" data-app="npa"><img src="img/apps/npa.png" alt=""><div><b>警政服務</b><span>165 防詐專區、110 報案</span></div></div>
+   <div class="app" data-app="fraud"><img src="img/apps/fraud.png" alt=""><div><b>網詐通報查詢網</b><span>查可疑網址、簡訊</span></div></div>
+   <div class="app" data-app="cwa"><img src="img/apps/cwa.png" alt=""><div><b>中央氣象署 W</b><span>天氣、地震、颱風通知</span></div></div>
+   <div class="app" data-app="maps"><img src="img/apps/maps.png" alt=""><div><b>Google 地圖</b><span>找路、找美食、看評分</span></div></div>
+   <div class="app" data-app="translate"><img src="img/apps/translate.png" alt=""><div><b>Google 翻譯</b><span>拍菜單、對話翻譯</span></div></div>
+   <div class="app" data-app="google"><img src="img/apps/google.png" alt=""><div><b>Google</b><span>智慧鏡頭、AI 模式</span></div></div>
+   <div class="app" data-app="gemini"><img src="img/apps/gemini.png" alt=""><div><b>Gemini</b><span>聊天、整理影片、畫圖</span></div></div>
+   <div class="app" data-app="merlin"><img src="img/apps/merlin.png" alt=""><div><b>Merlin 鳥種識別</b><span>拍照或錄叫聲認鳥（台灣鳥種持續增加中）</span></div></div>
+   <div class="app" data-app="seek"><img src="img/apps/seek.png" alt=""><div><b>Seek</b><span>拍花草、昆蟲，免註冊</span></div></div>
+   <div class="app" data-app="busplus"><img src="img/apps/busplus.png" alt=""><div><b>Bus+</b><span>公車幾分鐘到、台鐵、YouBike（免費，有廣告）</span></div></div>
   </div>
-  <div class="src">2026-11-16 查證：以上 App 皆在台灣 App Store 上架（圖示取自 App Store）；Google Play 亦可下載。台北等公車 Android 版請在 Play 商店搜尋確認。</div>
+  <div class="src">2026-11-16 查證：每個按鈕都逐一打開確認，台灣 App Store 與 Google Play 皆有上架（圖示取自 App Store）。</div>
  </div>
 </section>
 
@@ -815,6 +827,21 @@ addEventListener("keydown",e=>{
   else if(e.key==="Escape")toc.classList.remove("show");
   else if(e.key==="t"||e.key==="T")toc.classList.toggle("show");
 });
+
+/* 商店下載／更新連結（2026-11-16 逐一開過確認） */
+const STORE={
+ line:["443904275","jp.naver.line.android"],google:["284815942","com.google.android.googlequicksearchbox"],
+ gemini:["6477489729","com.google.android.apps.bard"],maps:["585027354","com.google.android.apps.maps"],
+ translate:["414706506","com.google.android.apps.translate"],nhi:["578186283","com.nhiApp.v1"],
+ whoscall:["929968679","gogolook.callgogolook2"],npa:["544121843","tw.gov.npa.callservice"],
+ fraud:["6587570857","com.fraud.buster.prod"],cwa:["439181175","org.cwb"],
+ merlin:["773457673","com.labs.merlinbirdid.app"],seek:["1353224144","org.inaturalist.seek"],
+ busplus:["967861325","hearsilent.busplus"]};
+const ua=navigator.userAgent, isIOS=/iPhone|iPad|iPod/.test(ua)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1), isAnd=/Android/.test(ua);
+if(isIOS)document.body.classList.add("is-ios"); if(isAnd)document.body.classList.add("is-and");
+document.querySelectorAll(".app[data-app]").forEach(c=>{const st=STORE[c.dataset.app];if(!st)return;
+  const verb=c.closest(".upd")?"更新":"下載";
+  c.insertAdjacentHTML("beforeend",`<div class="dl"><a class="ios" href="https://apps.apple.com/tw/app/id${st[0]}" target="_blank" rel="noopener">🍎 iPhone ${verb}</a><a class="and" href="https://play.google.com/store/apps/details?id=${st[1]}" target="_blank" rel="noopener">▶ Android ${verb}</a></div>`)});
 </script>
 </body>
 </html>
