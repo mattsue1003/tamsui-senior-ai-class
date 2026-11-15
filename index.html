@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>手機 AI 好幫手</title>
+<meta name="description" content="淡水區農會 長者健康促進：LINE 社群、掃 QR Code、Google 智慧鏡頭、AI 模式、YouTube 重點整理、Gemini 生活用法、網頁變 App，加上動腦遊戲與長者須知。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Fraunces:ital,wght@1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f3ea;--card:#fffdf8;--ink:#26221e;--ink2:#5b534b;--line:#e4dac8;
+  --rose:#b9545f;--blue:#3b64a0;--ochre:#9c7720;--plum:#6e4f9e;--leaf:#3f7a5a;--line-g:#06c755;
+  --shadow:0 1px 2px rgba(60,40,20,.08),0 8px 24px rgba(60,40,20,.10);
+}
+*{box-sizing:border-box}
+html{scroll-snap-type:y proximity;scroll-behavior:smooth}
+html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font-family:"Noto Sans TC",system-ui,sans-serif;font-size:clamp(18px,1.55vw,30px);line-height:1.55;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .3 0 0 0 .08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+h1,h2,h3,.wk{font-family:"LXGW WenKai TC","Noto Sans TC",serif;font-weight:700;letter-spacing:.01em}
+a{color:var(--blue)}
+img{max-width:100%}
+.slide{min-height:100vh;scroll-snap-align:start;padding:5vh 5vw 13vh;position:relative;display:flex;flex-direction:column;justify-content:center;border-bottom:1px dashed var(--line)}
+.slide>.inner{max-width:1500px;width:100%;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:900;font-size:.72em;letter-spacing:.12em;color:var(--c,var(--ink));margin-bottom:.4em}
+.eyebrow .no{font-family:"Fraunces",serif;font-style:italic;font-size:1.6em;letter-spacing:0}
+.eyebrow::before{content:"";width:14px;height:14px;background:var(--c,var(--ink))}
+h2{font-size:2.15em;line-height:1.2;margin:0 0 .45em}
+h3{font-size:1.25em;margin:.2em 0 .3em}
+.lede{font-size:1.08em;color:var(--ink2);margin:0 0 1em;max-width:46em}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:3.2vw;align-items:center}
+.cols.l{grid-template-columns:1.25fr 1fr}.cols.r{grid-template-columns:1fr 1.25fr}
+.cols.three{grid-template-columns:repeat(3,1fr);align-items:start}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;box-shadow:var(--shadow);padding:1em 1.1em}
+.photo{background:#fff;padding:10px;box-shadow:var(--shadow);border-radius:3px;position:relative}
+.photo img{display:block;width:100%;border-radius:2px}
+.photo .cap{font-size:.62em;color:var(--ink2);padding:6px 4px 0}
+.tilt-l{transform:rotate(-1.5deg)}.tilt-r{transform:rotate(1.2deg)}
+.tape{position:absolute;top:-14px;left:50%;width:120px;height:28px;transform:translateX(-50%) rotate(-3deg);background:rgba(156,119,32,.22)}
+.shot{border-radius:14px;overflow:hidden;box-shadow:var(--shadow);border:6px solid #1f1f1f;background:#1f1f1f}
+.shot img{display:block;width:100%;max-height:58vh;object-fit:contain}
+.shotcap{font-size:.6em;color:var(--ink2);margin-top:6px;text-align:center}
+.steps{list-style:none;padding:0;margin:0;counter-reset:s}
+.steps li{counter-increment:s;display:flex;gap:.7em;align-items:flex-start;margin:.45em 0;font-size:1.02em}
+.steps li::before{content:counter(s);flex:none;width:1.75em;height:1.75em;border-radius:50%;background:var(--c,var(--ink));color:#fff;display:grid;place-items:center;font-weight:900;font-size:.9em;margin-top:.1em}
+.steps b,.k{background:#fff3c4;padding:0 .25em;border-radius:3px;font-weight:900}
+.pill{display:inline-block;border:2px solid var(--c,var(--ink));color:var(--c,var(--ink));border-radius:999px;padding:.05em .7em;font-weight:900;font-size:.8em;margin:.1em .15em}
+.warn{background:#fdf0f0;border-left:6px solid var(--rose);padding:.6em .9em;border-radius:4px;margin:.6em 0;font-size:.92em}
+.tip{background:#eef4ea;border-left:6px solid var(--leaf);padding:.6em .9em;border-radius:4px;margin:.6em 0;font-size:.92em}
+.note{background:#f1eef8;border-left:6px solid var(--plum);padding:.6em .9em;border-radius:4px;margin:.6em 0;font-size:.92em}
+.src{font-size:.55em;color:var(--ink2);margin-top:1em}
+.src a{color:var(--ink2)}
+table.cmp{border-collapse:collapse;width:100%;font-size:.95em;background:var(--card);box-shadow:var(--shadow)}
+table.cmp th,table.cmp td{border:1px solid var(--line);padding:.45em .7em;text-align:left;vertical-align:top}
+table.cmp th{background:#f1ead9;font-family:"LXGW WenKai TC",serif}
+table.cmp td:first-child{font-weight:900;white-space:nowrap}
+/* phone mockups */
+.phones{display:flex;gap:1.6vw;flex-wrap:wrap;justify-content:center}
+.ph{width:min(12.5vw,200px);min-width:140px;text-align:center}
+.ph .dev{aspect-ratio:9/18.5;background:#1d1d1f;border-radius:26px;padding:8px;box-shadow:var(--shadow);position:relative}
+.ph .scr{background:#fff;border-radius:19px;height:100%;overflow:hidden;font-size:.5em;line-height:1.35;text-align:left;position:relative;display:flex;flex-direction:column}
+.ph .tb{background:#f6f6f6;padding:16px 8px 6px;font-weight:900;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee}
+.ph .row{padding:7px 8px;border-bottom:1px solid #f1f1f1;display:flex;gap:6px;align-items:center}
+.ph .av{width:20px;height:20px;border-radius:50%;background:#cfd8dc;flex:none}
+.ph .hl{outline:3px solid #ff4d4f;outline-offset:1px;border-radius:6px;position:relative;animation:pulse 1.6s infinite}
+@keyframes pulse{50%{outline-color:rgba(255,77,79,.35)}}
+.ph .btn{background:var(--line-g);color:#fff;text-align:center;border-radius:6px;padding:6px;margin:8px;font-weight:900}
+.ph .bar{margin-top:auto;display:flex;justify-content:space-around;padding:6px 0 10px;border-top:1px solid #eee;font-size:.9em;color:#777}
+.ph .cap{font-size:.62em;margin-top:8px;font-weight:700;line-height:1.35}
+.ph .cap b{display:block;font-size:1.25em;color:var(--c,var(--ink))}
+.demo{font-size:.55em;color:var(--ink2);text-align:center;margin-top:.6em}
+/* agenda */
+.agenda{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.agenda a{background:var(--card);border:1px solid var(--line);border-top:6px solid var(--c);border-radius:6px;padding:.7em .8em;text-decoration:none;color:inherit;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:.2em;min-height:5.4em}
+.agenda a .n{font-family:"Fraunces",serif;font-style:italic;color:var(--c);font-size:1.3em;line-height:1}
+.agenda a b{font-family:"LXGW WenKai TC",serif;font-size:1.05em}
+.agenda a small{color:var(--ink2);font-size:.65em;line-height:1.35}
+/* apps */
+.apps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.app{display:flex;gap:.6em;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:.55em .7em;box-shadow:var(--shadow)}
+.app img{width:2.6em;height:2.6em;border-radius:22%;flex:none;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.app b{display:block;font-size:.88em;line-height:1.25}
+.app span{font-size:.62em;color:var(--ink2);line-height:1.3;display:block}
+/* qr */
+.qr{background:#fff;padding:10px;border-radius:8px;box-shadow:var(--shadow);display:inline-block;text-align:center}
+.qr img{width:11em;height:11em;display:block}
+.qr span{font-size:.65em;font-weight:900}
+.embed{width:100%;height:62vh;border:0;border-radius:10px;box-shadow:var(--shadow);background:#fff}
+.btn{display:inline-flex;align-items:center;gap:.4em;background:var(--ink);color:var(--paper);border-radius:999px;padding:.35em 1.1em;text-decoration:none;font-weight:900;font-size:.85em}
+.btn.alt{background:#fff;color:var(--ink);border:2px solid var(--ink)}
+.bigq{font-family:"LXGW WenKai TC",serif;font-size:1.3em;background:#fff;border:2px dashed var(--c,var(--ink));padding:.5em .8em;border-radius:8px;margin:.4em 0}
+.cover h1{font-size:2.9em;line-height:1.12;margin:.15em 0 .3em}
+.cover .org{font-weight:900;letter-spacing:.2em;color:var(--leaf)}
+.chips span{display:inline-block;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:.1em .7em;margin:.15em;font-size:.75em;font-weight:700}
+/* menu overlay */
+.menuwrap{position:relative}
+.menuwrap .tr{position:absolute;left:9%;right:9%;line-height:1.3;font-weight:900;background:rgba(255,255,255,.92);color:#1b3d75;border-radius:4px;padding:0 .3em;font-size:.82em;display:flex;justify-content:space-between;opacity:0;transition:opacity .4s}
+.menuwrap.on .tr{opacity:1}
+/* nav */
+#nav{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:30;display:flex;gap:6px;align-items:center;background:rgba(255,253,248,.95);border:1px solid var(--line);border-radius:999px;padding:6px 8px;box-shadow:var(--shadow);font-size:16px}
+#nav button{border:0;background:transparent;font:inherit;font-weight:900;min-width:44px;min-height:44px;border-radius:999px;cursor:pointer}
+#nav button:hover{background:#f1ead9}
+#nav input{width:3.2em;text-align:center;font:inherit;font-weight:900;border:1.5px solid var(--line);border-radius:8px;padding:6px 2px}
+#toc{position:fixed;inset:0;z-index:40;background:rgba(38,34,30,.5);display:none;align-items:center;justify-content:center}
+#toc.show{display:flex}
+#toc .box{background:var(--card);width:min(1100px,94vw);max-height:86vh;overflow:auto;border-radius:12px;padding:20px 24px;font-size:18px}
+#toc .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px 18px}
+#toc a{text-decoration:none;color:inherit;padding:6px 8px;border-radius:6px;display:block}
+#toc a:hover,#toc a.cur{background:#f1ead9}
+#toc a i{font-style:normal;color:var(--ink2);display:inline-block;width:2.2em}
+.progress{position:fixed;top:0;left:0;height:4px;background:var(--rose);z-index:31;width:0;transition:width .2s}
+@media (max-width:900px){
+  body{font-size:18px}
+  .slide{padding:7vh 16px 110px;min-height:auto}
+  html{scroll-snap-type:none}
+  .cols,.cols.l,.cols.r,.cols.three{grid-template-columns:1fr}
+  .agenda{grid-template-columns:repeat(2,1fr)}
+  .apps{grid-template-columns:1fr 1fr}
+  .ph{width:42vw}
+  h2{font-size:1.7em}.cover h1{font-size:2.2em}
+  #toc .grid{grid-template-columns:1fr}
+  .embed{height:75vh}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="prog"></div>
+
+<!-- 1 封面 -->
+<section class="slide cover" data-title="封面">
+ <div class="inner cols l">
+  <div>
+   <div class="org">淡水區農會・長者健康促進</div>
+   <h1>手機 AI 好幫手<br><span style="color:var(--rose);font-size:.72em">拍一拍、問一問、玩一玩</span></h1>
+   <div class="chips"><span>LINE 社群</span><span>掃 QR Code</span><span>Google 智慧鏡頭</span><span>AI 模式</span><span>YouTube 重點整理</span><span>Gemini 生活用法</span><span>網頁變 App</span><span>動腦遊戲</span></div>
+   <p style="margin-top:1em">講師｜鍾孟修 職能治療師</p>
+   <div style="display:flex;gap:16px;align-items:center;margin-top:.6em"><div class="qr"><img src="img/qr-deck.svg" alt="本簡報 QR Code" style="width:7em;height:7em"><span>手機掃描跟著看</span></div></div>
+  </div>
+  <div class="photo tilt-r"><span class="tape"></span><img src="img/ai/cover.jpg" alt="長輩在農會教室拿手機學習的插畫"><div class="cap">插畫：ChatGPT 生成</div></div>
+ </div>
+</section>
+
+<!-- 2 講師 -->
+<section class="slide" data-title="講師介紹">
+ <div class="inner cols r">
+  <div class="photo tilt-l" style="max-width:420px;justify-self:center"><span class="tape"></span><img src="img/speaker.jpg" alt="鍾孟修 職能治療師"></div>
+  <div>
+   <div class="eyebrow" style="--c:var(--blue)">講師</div>
+   <h2>大家好！我是鍾孟修<br>職能治療師</h2>
+   <ul style="margin:.2em 0 1em;padding-left:1.1em">
+    <li>社團法人台灣生活復能健康促進協會 理事長</li>
+    <li>愛迪樂 居家職能治療所、長照機構、失智據點 執行長</li>
+    <li>銀髮體適能、認知桌遊、遊戲化教學設計</li>
+   </ul>
+   <div style="display:flex;gap:18px;flex-wrap:wrap">
+    <a class="qr" href="https://mattsue1003.github.io/matt-intro/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit"><img src="img/qr-intro.svg" alt="自我介紹網站 QR" style="width:7.5em;height:7.5em"><span>認識我</span></a>
+    <a class="qr" href="https://www.facebook.com/profile.php?id=100063748491881" target="_blank" rel="noopener" style="text-decoration:none;color:inherit"><img src="img/qr-fb.svg" alt="粉絲專頁 QR" style="width:7.5em;height:7.5em"><span>粉絲專頁</span></a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- 3 地圖 -->
+<section class="slide" data-title="今天的地圖">
+ <div class="inner">
+  <div class="eyebrow" style="--c:var(--ochre)">今天的地圖</div>
+  <h2>今天學 8 件事，再玩遊戲</h2>
+  <p class="lede">點任何一格，直接跳過去。學不完沒關係，簡報網址掃起來，回家慢慢看。</p>
+  <nav class="agenda">
+   <a href="#line" style="--c:#06a64b"><span class="n">01</span><b>LINE 社群</b><small>開一個自己的社群</small></a>
+   <a href="#qr" style="--c:var(--blue)"><span class="n">02</span><b>掃 QR Code</b><small>LINE 和相機都能掃</small></a>
+   <a href="#lens" style="--c:var(--rose)"><span class="n">03</span><b>Google 智慧鏡頭</b><small>拍花、鳥、景點、商品</small></a>
+   <a href="#translate" style="--c:var(--plum)"><span class="n">04</span><b>翻譯模式</b><small>出國看菜單不用怕</small></a>
+   <a href="#aimode" style="--c:var(--ochre)"><span class="n">05</span><b>AI 模式</b><small>用說話的方式查資料</small></a>
+   <a href="#youtube" style="--c:#c4302b"><span class="n">06</span><b>YouTube 重點</b><small>長影片 1 分鐘看懂</small></a>
+   <a href="#gemini" style="--c:var(--blue)"><span class="n">07</span><b>Gemini 生活用</b><small>畫賀卡、找美食</small></a>
+   <a href="#apps" style="--c:var(--leaf)"><span class="n">08</span><b>好用 App＋網頁變 App</b><small>手機桌面多一個寶</small></a>
+   <a href="#games" style="--c:var(--rose)"><span class="n">09</span><b>動腦遊戲館</b><small>猜歌、猜圖、翻牌</small></a>
+   <a href="#info" style="--c:var(--plum)"><span class="n">10</span><b>長者須知</b><small>福利、健康、生活查詢</small></a>
+  </nav>
+ </div>
+</section>
+
+<!-- 4 先準備 -->
+<section class="slide" data-title="上課前準備">
+ <div class="inner cols">
+  <div>
+   <div class="eyebrow" style="--c:var(--leaf)">先準備</div>
+   <h2>上課前，手機先做 3 件事</h2>
+   <ol class="steps" style="--c:var(--leaf)">
+    <li><span>連上 <b>Wi-Fi</b>，電量 50% 以上</span></li>
+    <li><span>到 App Store／Play 商店，把 <b>LINE</b>、<b>Google</b>、<b>Gemini</b> 更新到最新版</span></li>
+    <li><span>字太小？到「設定」把<b>字體放大</b>，看得清楚最重要</span></li>
+   </ol>
+   <div class="note">LINE 從 2026 年 3 月起分批換新畫面，所以大家的手機<b>可能長得不一樣</b>，沒關係，找圖示就對了。</div>
+  </div>
+  <div class="apps" style="grid-template-columns:1fr 1fr">
+   <div class="app"><img src="img/apps/line.png" alt=""><div><b>LINE</b><span>社群、掃 QR Code</span></div></div>
+   <div class="app"><img src="img/apps/google.png" alt=""><div><b>Google</b><span>智慧鏡頭、AI 模式</span></div></div>
+   <div class="app"><img src="img/apps/gemini.png" alt=""><div><b>Gemini</b><span>整理影片、畫圖</span></div></div>
+   <div class="app"><img src="img/apps/maps.png" alt=""><div><b>Google 地圖</b><span>找美食、看評分</span></div></div>
+  </div>
+ </div>
+</section>
+
+<!-- 5 LINE 社群 vs 群組 -->
+<section class="slide" id="line" data-title="LINE 社群是什麼">
+ <div class="inner cols l">
+  <div>
+   <div class="eyebrow" style="--c:#06a64b"><span class="no">01</span> LINE 社群</div>
+   <h2>社群和群組，差在哪？</h2>
+   <table class="cmp">
+    <tr><th></th><th>群組</th><th>社群</th></tr>
+    <tr><td>人數</td><td>最多約 500 人</td><td>人數多很多，適合班級、社團</td></tr>
+    <tr><td>名字</td><td>用 LINE 本名、大頭貼</td><td><b class="k">每個社群可取不同暱稱、頭像</b></td></tr>
+    <tr><td>加入</td><td>要被邀請</td><td>掃 QR Code、點連結就能加入</td></tr>
+    <tr><td>管理</td><td>大家都一樣</td><td>有管理員，可設共同管理員</td></tr>
+   </table>
+   <div class="tip">適合：農會班級、社區據點、志工隊、同學會。新加入的人也看得到最近半年的訊息。</div>
+   <div class="src">出處：LINE 官方說明〈社群基本設計說明〉、〈群組的建立與人數上限〉help.line.me</div>
+  </div>
+  <div class="photo tilt-r"><span class="tape"></span><img src="img/ai/community.jpg" alt="長輩們用手機社群分享照片的插畫"><div class="cap">插畫：ChatGPT 生成</div></div>
+ </div>
+</section>
+
+<!-- 6 建立社群 -->
+<section class="slide" data-title="建立社群 6 步驟">
+ <div class="inner">
+  <div class="eyebrow" style="--c:#06a64b"><span class="no">01</span> LINE 社群</div>
+  <h2>開一個自己的社群：6 個步驟</h2>
+  <div class="phones" style="--c:#06a64b">
+   <div class="ph"><div class="dev"><div class="scr"><div class="tb">聊天 <span class="hl">💬社群</span></div><div class="row"><span class="av"></span>家人群組</div><div class="row"><span class="av"></span>阿明</div><div class="row"><span class="av"></span>農會班</div><div class="bar"><span>主頁</span><span style="color:#06c755">聊天</span><span>錢包</span></div></div></div><div class="cap"><b>①</b>「聊天」頁上方點<br>「社群」圖示</div></div>
+   <div class="ph"><div class="dev"><div class="scr"><div class="tb">社群</div><div class="row">🔍 搜尋社群</div><div class="row" style="color:#999">推薦社群…</div><div class="row" style="color:#999">推薦社群…</div><div class="btn hl" style="margin-top:auto">＋ 建立</div></div></div><div class="cap"><b>②</b>點畫面下方<br>「建立」</div></div>
+   <div class="ph"><div class="dev"><div class="scr"><div class="tb">建立社群</div><div style="height:60px;background:#e8f5e9;margin:8px;border-radius:6px;display:grid;place-items:center">📷 封面</div><div class="row hl">名稱：淡水農會樂齡班</div><div class="row" style="color:#999">簡介（可不填）</div><div class="btn" style="margin-top:auto">下一步</div></div></div><div class="cap"><b>③</b>取社群名字<br>再按「下一步」</div></div>
+   <div class="ph"><div class="dev"><div class="scr"><div class="tb">個人檔案</div><div style="display:grid;place-items:center;padding:14px"><span class="av" style="width:46px;height:46px"></span></div><div class="row hl">暱稱：阿嬌老師</div><div class="btn" style="margin-top:auto">完成</div></div></div><div class="cap"><b>④</b>設定這個社群<br>用的暱稱、頭像</div></div>
+   <div class="ph"><div class="dev"><div class="scr"><div class="tb">社群小提醒</div><div class="row" style="color:#555">請遵守規範，友善交流…</div><div class="btn hl" style="margin-top:auto">確定</div></div></div><div class="cap"><b>⑤</b>看完小提醒<br>按「確定」</div></div>
+   <div class="ph"><div class="dev"><div class="scr"><div class="tb">淡水農會樂齡班 <span class="hl">≡</span></div><div class="row" style="color:#555">歡迎大家！</div><div class="bar"></div></div></div><div class="cap"><b>⑥</b>完成！右上「≡」<br>可以改設定、邀請</div></div>
+  </div>
+  <div class="demo">畫面為示意圖，依 LINE 官方說明繪製；新版、舊版位置可能略有不同（舊版：主頁 → 社群）。</div>
+ </div>
+</section>
+
+<!-- 7 社群設定與邀請 -->
+<section class="slide" data-title="社群設定與邀請">
+ <div class="inner cols three">
+  <div class="card" style="border-top:6px solid #06a64b">
+   <h3>🔒 誰可以加入？</h3>
+   <p style="font-size:.85em;margin:.2em 0">≡ → 設定 → <b class="k">公開範圍設定</b></p>
+   <ul style="font-size:.85em;padding-left:1.1em;margin:0"><li>所有人皆可參加</li><li>須輸入參加密碼</li><li><b>須管理員核准</b>（最推薦）</li></ul>
+   <p style="font-size:.78em;color:var(--ink2)">不想被陌生人搜尋到：關掉「在搜尋結果中顯示此社群」。</p>
+  </div>
+  <div class="card" style="border-top:6px solid var(--blue)">
+   <h3>📨 怎麼邀請？</h3>
+   <p style="font-size:.85em;margin:.2em 0">≡ → <b class="k">邀請</b>，可以選：</p>
+   <ul style="font-size:.85em;padding-left:1.1em;margin:0"><li>邀請好友</li><li>複製連結、分享連結</li><li><b>分享行動條碼</b>（QR Code）</li></ul>
+   <p style="font-size:.78em;color:var(--ink2)">上課時把 QR Code 放大，大家一掃就加入。</p>
+  </div>
+  <div class="card" style="border-top:6px solid var(--ochre)">
+   <h3>👥 找幫手管理</h3>
+   <p style="font-size:.85em;margin:.2em 0">≡ → 設定 → 管理成員 → <b class="k">新增共同管理員</b></p>
+   <ul style="font-size:.85em;padding-left:1.1em;margin:0"><li>可設多位共同管理員</li><li>可用「記事本」放重要貼文</li><li>太吵：設定 → 提醒，關掉通知</li></ul>
+  </div>
+ </div>
+ <div class="inner"><div class="src">出處：LINE 官方說明〈社群的設定管理〉、〈社群基本設計說明（成員）〉help.line.me</div></div>
+</section>
+
+<!-- 8 防詐 -->
+<section class="slide" data-title="社群防詐">
+ <div class="inner cols">
+  <div>
+   <div class="eyebrow" style="--c:var(--rose)"><span class="no">01</span> 一定要知道</div>
+   <h2>「投資老師」社群<br><span style="color:var(--rose)">100% 是詐騙</span></h2>
+   <ol class="steps" style="--c:var(--rose)">
+    <li><span>網路廣告冒用名人：「加 LINE 送飆股」</span></li>
+    <li><span>群組裡每天有「老師」上課，假學員一直說賺錢</span></li>
+    <li><span>叫你下載 App，先讓你小賺，最後<b>領不出錢</b></span></li>
+   </ol>
+   <div class="warn">社群裡大家都用暱稱，看不出是誰。私訊你的「助理、管理員」要特別小心。<br>口訣：<b>冷靜 → 查證 → 打 165</b></div>
+   <div class="src">出處：165 全民防騙、政府防詐宣導（投資詐騙手法）</div>
+  </div>
+  <div class="apps" style="grid-template-columns:1fr">
+   <div class="app"><img src="img/apps/npa.png" alt=""><div><b>警政服務 App（內有 165 專區）</b><span>警政署｜可疑訊息分析、詐騙來電排行</span></div></div>
+   <div class="app"><img src="img/apps/fraud.png" alt=""><div><b>網詐通報查詢網</b><span>數位發展部｜查可疑網址、簡訊</span></div></div>
+   <div class="app"><img src="img/apps/whoscall.png" alt=""><div><b>Whoscall</b><span>陌生來電辨識（基本功能免費）</span></div></div>
+  </div>
+ </div>
+</section>
+
+<!-- 9 掃 QR -->
+<section class="slide" id="qr" data-title="掃 QR Code">
+ <div class="inner cols l">
+  <div>
+   <div class="eyebrow" style="--c:var(--blue)"><span class="no">02</span> 掃 QR Code</div>
+   <h2>三種掃法，選一種就好</h2>
+   <div class="phones" style="--c:var(--blue);justify-content:flex-start">
+    <div class="ph"><div class="dev"><div class="scr"><div class="tb">聊天 <span class="hl">＋</span></div><div class="row hl" style="margin:6px">📷 掃描行動條碼</div><div class="row">👤 加入好友</div><div class="row">💬 建立聊天室</div></div></div><div class="cap"><b>LINE</b>聊天 →「＋」→<br>掃描行動條碼</div></div>
+    <div class="ph"><div class="dev"><div class="scr" style="background:#222;color:#fff"><div style="margin:auto;width:70%;aspect-ratio:1;border:3px solid #fff;border-radius:10px;display:grid;place-items:center">▦</div><div class="hl" style="background:#fff;color:#000;margin:8px;padding:6px;border-radius:8px;font-weight:900">🔗 mattsue1003.github.io</div></div></div><div class="cap"><b>iPhone 相機</b>對準後，點下方<br>跳出來的連結</div></div>
+    <div class="ph"><div class="dev"><div class="scr"><div class="tb">Google</div><div class="row hl" style="margin:6px;border-radius:20px;background:#f1f3f4">🔍 搜尋… 🎤 <b>📷</b></div><div class="row" style="color:#999">對準 QR Code 即可</div></div></div><div class="cap"><b>Android</b>相機直接掃，或 Google<br>智慧鏡頭 📷</div></div>
+   </div>
+   <div class="demo">示意圖，依 LINE 與 Apple 官方說明繪製；Android 各品牌相機不同。</div>
+  </div>
+  <div class="photo tilt-r"><span class="tape"></span><img src="img/ai/qrscan.jpg" alt="長輩用手機掃描 QR Code 的插畫"><div class="cap">插畫：ChatGPT 生成</div></div>
+ </div>
+</section>
+
+<!-- 10 QR 練習＋安全 -->
+<section class="slide" data-title="QR Code 練習與安全">
+ <div class="inner cols">
+  <div style="text-align:center">
+   <div class="eyebrow" style="--c:var(--blue)"><span class="no">02</span> 現在就練習</div>
+   <h2>掃這個，打開「動腦遊戲館」</h2>
+   <div class="qr"><img src="img/qr-games.svg" alt="動腦遊戲館 QR Code" style="width:13em;height:13em"><span>mattsue1003.github.io/elder-brain-games</span></div>
+  </div>
+  <div>
+   <h3>掃之前，先看 3 件事</h3>
+   <ol class="steps" style="--c:var(--rose)">
+    <li><span><b>先看網址</b>再點：政府是 gov.tw，拼字怪怪的不要點</span></li>
+    <li><span>用 QR Code 加 LINE 好友，<b>不需要驗證碼</b>。跟你要驗證碼＝詐騙</span></li>
+    <li><span>貼在路邊、停車場的<b>付款 QR Code</b>可能被貼假的</span></li>
+   </ol>
+   <div class="tip">不小心掃錯：LINE 設定 → 我的帳號 → 登入中的裝置，把不認識的登出，再改密碼。</div>
+   <div class="src">出處：Apple 支援〈使用 iPhone 相機掃描行動條碼〉；LINE 官方防詐提醒（TVBS 健康 2025 報導）</div>
+  </div>
+ </div>
+</section>
+
+<!-- 11 智慧鏡頭是什麼 -->
+<section class="slide" id="lens" data-title="Google 智慧鏡頭">
+ <div class="inner cols l">
+  <div>
+   <div class="eyebrow" style="--c:var(--rose)"><span class="no">03</span> Google 智慧鏡頭</div>
+   <h2>看到不知道的，<br>拍下來問 Google</h2>
+   <ol class="steps" style="--c:var(--rose)">
+    <li><span>打開 <b>Google App</b>，點搜尋列右邊的<b>彩色相機</b></span></li>
+    <li><span>選模式：<span class="pill">搜尋</span><span class="pill">翻譯</span><span class="pill">家庭作業</span></span></li>
+    <li><span>對準東西，按<b>快門</b>，往上滑看答案</span></li>
+   </ol>
+   <div class="note">Android 新手機還有「<b>畫圈搜尋</b>」：按住螢幕下方的橫條，把想查的東西圈起來。<br>iPhone 內建相機沒有智慧鏡頭，要從 Google App 開。</div>
+   <div class="src">出處：Google 搜尋說明〈使用 Google 智慧鏡頭〉、〈畫圈搜尋〉support.google.com</div>
+  </div>
+  <div class="cols" style="gap:14px;grid-template-columns:1fr 1fr">
+   <div class="photo"><img src="img/lens/flower.jpg" alt="花"><div class="cap">🌸 花草植物</div></div>
+   <div class="photo"><img src="img/lens/bird.jpg" alt="鳥"><div class="cap">🐦 鳥、昆蟲、動物</div></div>
+   <div class="photo"><img src="img/lens/place.jpg" alt="景點"><div class="cap">🏯 景點、建築</div></div>
+   <div class="photo"><img src="img/lens/product.jpg" alt="商品"><div class="cap">🛒 商品、比價</div></div>
+  </div>
+ </div>
+</section>
+
+<!-- 12 實測：鳥 -->
+<section class="slide" data-title="實測：拍鳥">
+ <div class="inner cols">
+  <div>
+   <div class="eyebrow" style="--c:var(--rose)"><span class="no">03</span> 實際試試看</div>
+   <h2>拍一隻白色的鳥<br>→「這是小白鷺」</h2>
+   <p class="lede">智慧鏡頭不只說名字，還會整理特徵：全身白、嘴巴黑、<b>腳趾是黃色</b>，常在稻田、溪邊。</p>
+   <div class="bigq" style="--c:var(--rose)">💬 往下還可以追問：「牠和大白鷺怎麼分？」</div>
+   <div class="tip">在公園、田邊散步時拍拍看，順便動腦記鳥名！</div>
+  </div>
+  <div class="cols" style="gap:14px">
+   <div><div class="shot"><img src="img/shots/lens_bird.jpg" alt="Google 智慧鏡頭辨識小白鷺的實際畫面"></div><div class="shotcap">① 上傳照片，馬上認出小白鷺</div></div>
+   <div><div class="shot"><img src="img/shots/lens_bird2.jpg" alt="智慧鏡頭整理小白鷺特徵"></div><div class="shotcap">② 整理特徵，還能追問</div></div>
+  </div>
+ </div>
+ <div class="inner"><div class="src">實際畫面：講師 2026-11-16 以 Google 智慧鏡頭實測（電腦版）；照片來源 Wikimedia Commons。</div></div>
+</section>
+
+<!-- 13 實測：景點 + AI 會錯 -->
+<section class="slide" data-title="實測：拍景點">
+ <div class="inner cols r">
+  <div><div class="shot"><img src="img/shots/lens_place.jpg" alt="智慧鏡頭辨識淡水紅毛城的實際畫面"></div><div class="shotcap">拍紅毛城：認出名字、地點，還附上博物館網頁</div></div>
+  <div>
+   <div class="eyebrow" style="--c:var(--rose)"><span class="no">03</span> 實際試試看</div>
+   <h2>拍淡水紅毛城</h2>
+   <p>名字、地點都對，還附上<b>淡水古蹟博物館</b>的網頁。</p>
+   <div class="warn"><b>但是！</b>它說「最早由西班牙人於 1730 年代興建」——<b>這是錯的</b>。<br>西班牙人在 <b>1628 年</b>建城，荷蘭人 1644 年重建。</div>
+   <div class="bigq" style="--c:var(--rose)">👉 AI 會出錯，<b>點下面的來源連結</b>再確認一次</div>
+   <div class="src">查證：新北市立淡水古蹟博物館〈紅毛城〉介紹</div>
+  </div>
+ </div>
+</section>
+
+<!-- 14 人、商品 -->
+<section class="slide" data-title="拍商品、拍人">
+ <div class="inner cols">
+  <div class="card" style="border-top:6px solid var(--leaf)">
+   <h3>🛒 拍商品：查價格、看評價</h3>
+   <ol class="steps" style="--c:var(--leaf);font-size:.9em">
+    <li><span>對著商品或包裝拍照</span></li>
+    <li><span>看「購物」結果：價格、哪裡買</span></li>
+    <li><span>不一定最便宜，<b>自己多比幾家</b></span></li>
+   </ol>
+   <div class="photo" style="max-width:340px;margin:.6em auto 0"><img src="img/lens/product.jpg" alt="電鍋"><div class="cap">例如：拍家裡的電鍋，找同款的內鍋、配件</div></div>
+  </div>
+  <div class="card" style="border-top:6px solid var(--plum)">
+   <h3>🙋 拍人？要有禮貌</h3>
+   <p style="font-size:.95em">智慧鏡頭<b>不是用來查陌生人是誰</b>的，拍到人通常不會告訴你他是誰。</p>
+   <ul style="font-size:.9em;padding-left:1.1em">
+    <li>拍別人之前，<b>先問對方可不可以</b></li>
+    <li>可以拍<b>衣服、包包</b>找同款</li>
+    <li>可以拍<b>名片</b>，把電話、地址直接存起來</li>
+   </ul>
+   <div class="tip">拍藥袋、說明書：用「選取文字」→「<b>聆聽</b>」，手機會唸給你聽。</div>
+   <div class="src">出處：Google 搜尋說明〈使用 Google 智慧鏡頭〉（可辨識物品、選取文字）</div>
+  </div>
+ </div>
+</section>
+
+<!-- 15 翻譯模式 -->
+<section class="slide" id="translate" data-title="翻譯模式：看菜單">
+ <div class="inner cols">
+  <div>
+   <div class="eyebrow" style="--c:var(--plum)"><span class="no">04</span> 翻譯模式</div>
+   <h2>出國看不懂菜單？<br>切到「翻譯」</h2>
+   <ol class="steps" style="--c:var(--plum)">
+    <li><span>智慧鏡頭下方選 <b>翻譯</b></span></li>
+    <li><span>上方語言選：<b>自動偵測 → 中文（繁體）</b></span></li>
+    <li><span>對準菜單，中文會<b>直接蓋在原文上</b></span></li>
+    <li><span>點「選取文字」→「聆聽」，聽發音</span></li>
+   </ol>
+   <p style="font-size:.8em">右邊的日文菜單，按一下看翻譯 👉</p>
+  </div>
+  <div class="cols" style="gap:14px">
+   <div class="photo menuwrap" id="menuDemo" onclick="this.classList.toggle('on')" style="cursor:pointer">
+    <div style="position:relative"><img src="img/menu_ja.jpg" alt="日文菜單">
+    <div class="tr" style="top:25.5%"><span>天婦羅拼盤</span><span>1,200 日圓</span></div>
+    <div class="tr" style="top:35.9%"><span>滑蛋雞肉丼</span><span>980 日圓</span></div>
+    <div class="tr" style="top:46.3%"><span>烤雞肉串</span><span>650 日圓</span></div>
+    <div class="tr" style="top:56.7%"><span>竹簍冷蕎麥麵</span><span>800 日圓</span></div>
+    <div class="tr" style="top:67.1%"><span>味噌湯</span><span>250 日圓</span></div>
+    <div class="tr" style="top:77.5%"><span>抹茶冰淇淋</span><span>450 日圓</span></div></div>
+    <div class="cap">👆 點一下：模擬翻譯模式</div>
+   </div>
+   <div><div class="shot"><img src="img/shots/lens_menu_ai.jpg" alt="智慧鏡頭翻譯日文菜單的實際畫面"></div><div class="shotcap">實測：每一道菜都翻對了</div></div>
+  </div>
+ </div>
+</section>
+
+<!-- 16 翻譯插畫 -->
+<section class="slide" data-title="翻譯好幫手">
+ <div class="inner cols l">
+  <div class="photo tilt-l"><span class="tape"></span><img src="img/ai/menu.jpg" alt="阿公阿嬤在日本餐廳用手機翻譯菜單的插畫"><div class="cap">插畫：ChatGPT 生成</div></div>
+  <div>
+   <h2>翻譯還能做什麼？</h2>
+   <ul style="padding-left:1.1em">
+    <li>看<b>外國藥品、保養品</b>說明</li>
+    <li>看<b>路標、車站</b>指示</li>
+    <li>孫子的<b>英文作業</b>（選「家庭作業」）</li>
+    <li>要跟外國人對話：用 <b>Google 翻譯 App</b> 的「對話」</li>
+   </ul>
+   <div class="app" style="max-width:420px"><img src="img/apps/translate.png" alt=""><div><b>Google 翻譯</b><span>相機翻譯、雙向對話翻譯</span></div></div>
+  </div>
+ </div>
+</section>
+
+<!-- 17 AI 模式 -->
+<section class="slide" id="aimode" data-title="Google AI 模式">
+ <div class="inner cols l">
+  <div>
+   <div class="eyebrow" style="--c:var(--ochre)"><span class="no">05</span> AI 模式</div>
+   <h2>像問朋友一樣問 Google</h2>
+   <ol class="steps" style="--c:var(--ochre)">
+    <li><span>打開 Google，點「<b>AI 模式</b>」（或網址 google.com/ai）</span></li>
+    <li><span>把話說完整：<b>地點＋誰要用＋條件</b></span></li>
+    <li><span>可以按 🎤 用說的，按 ＋ 放照片</span></li>
+    <li><span>不夠清楚就在下面<b>繼續追問</b></span></li>
+   </ol>
+   <div class="bigq" style="--c:var(--ochre)">💬「淡水有哪些適合長輩、少走路、有廁所的景點？」</div>
+   <div class="warn">Google 自己也說 AI 回答「<b>未必準確</b>」。看病、用藥、錢的事，一定要點來源確認。</div>
+   <div class="src">出處：Google 搜尋說明〈AI 模式〉；台灣繁中版 2025-10-08 推出（TechNews）</div>
+  </div>
+  <div style="max-width:440px;justify-self:center"><div class="shot"><img src="img/shots/aimode1.jpg" alt="AI 模式回答淡水長輩景點的實際畫面"></div><div class="shotcap">實測：推薦滬尾藝文休閒園區、雲門劇場，還附地圖</div></div>
+ </div>
+</section>
+
+<!-- 18 好問題公式 -->
+<section class="slide" data-title="問問題的公式">
+ <div class="inner">
+  <div class="eyebrow" style="--c:var(--ochre)"><span class="no">05</span> 練習</div>
+  <h2>好問題公式：<span style="color:var(--ochre)">誰＋在哪＋要什麼＋怎麼回答</span></h2>
+  <div class="cols three">
+   <div class="card"><h3>🍱 吃</h3><p>「我 70 歲有高血壓，淡水有哪些<b>少油少鹽</b>的午餐？列 3 家，寫地址」</p></div>
+   <div class="card"><h3>🚌 行</h3><p>「從淡水捷運站到馬偕醫院，<b>不想走太多路</b>，怎麼坐車最方便？」</p></div>
+   <div class="card"><h3>🌱 種</h3><p>（拍一張葉子發黃的照片）「我的<b>番茄葉子</b>為什麼變黃？要怎麼救？」</p></div>
+  </div>
+  <div class="tip" style="margin-top:1em">回答太長？加一句：「<b>用 5 點說明，字少一點，給長輩看</b>」。</div>
+ </div>
+</section>
+
+<!-- 19 YouTube Gemini -->
+<section class="slide" id="youtube" data-title="YouTube 重點整理">
+ <div class="inner cols r">
+  <div class="cols" style="gap:14px">
+   <div><div class="shot"><img src="img/shots/gem_yt1.jpg" alt="Gemini 找到國健署防跌影片"></div><div class="shotcap">① Gemini 找到國健署的防跌影片</div></div>
+   <div><div class="shot"><img src="img/shots/gem_yt2.jpg" alt="Gemini 整理成 5 點重點與時間"></div><div class="shotcap">② 整理 5 個重點，還標出幾分幾秒</div></div>
+  </div>
+  <div>
+   <div class="eyebrow" style="--c:#c4302b"><span class="no">06</span> YouTube 重點</div>
+   <h2>20 分鐘影片，<br>1 分鐘看懂重點</h2>
+   <ol class="steps" style="--c:#c4302b">
+    <li><span>在 YouTube 按「<b>分享</b>」→「<b>複製連結</b>」</span></li>
+    <li><span>打開 <b>Gemini</b>，貼上連結</span></li>
+    <li><span>打字：「<b>用 5 點整理重點，口語、字少一點</b>」</span></li>
+   </ol>
+   <div class="note">要先登入，並開啟「保留活動記錄」才能用。用語音聊天（Gemini Live）時不能整理影片。</div>
+   <div class="src">出處：Gemini 說明〈搭配 YouTube 使用 Gemini〉support.google.com；實測 2026-11-16</div>
+  </div>
+ </div>
+</section>
+
+<!-- 20 YouTube 其他 -->
+<section class="slide" data-title="問問 YouTube">
+ <div class="inner cols">
+  <div class="card" style="border-top:6px solid #c4302b">
+   <h3>✦ YouTube 內建「問問 YouTube」</h3>
+   <ol class="steps" style="--c:#c4302b;font-size:.9em">
+    <li><span>打開影片，影片下方找 <b>✦ 問問</b> 按鈕</span></li>
+    <li><span>點建議的問題，例如「<b>摘要這部影片</b>」</span></li>
+   </ol>
+   <p style="font-size:.85em">台灣、中文都能用，但<b>只有部分影片有這個按鈕</b>。</p>
+   <div class="src">出處：YouTube 說明〈在 YouTube 上使用「問問 YouTube」〉</div>
+  </div>
+  <div class="card" style="border-top:6px solid var(--ink2)">
+   <h3>🤔 為什麼不用 ChatGPT？</h3>
+   <p style="font-size:.9em">ChatGPT 打不開 YouTube 影片，只看得到標題，可能會<b>照標題亂編內容</b>。</p>
+   <div class="tip">整理 YouTube 👉 用 <b>Gemini</b><br>畫插圖、寫文章 👉 ChatGPT、Gemini 都可以</div>
+   <div class="src">依據：多個第三方實測（OpenAI 無官方說明）；講師實測</div>
+  </div>
+ </div>
+</section>
+
+<!-- 21 Gemini 生圖 -->
+<section class="slide" id="gemini" data-title="Gemini 畫賀卡">
+ <div class="inner cols r">
+  <div><div class="shot"><img src="img/shots/gem_img.jpg" alt="Gemini 畫出的淡水重陽賀卡"></div><div class="shotcap">實測：一句話畫出淡水河邊的重陽賀卡，連字都寫對了</div></div>
+  <div>
+   <div class="eyebrow" style="--c:var(--blue)"><span class="no">07</span> Gemini 生活用</div>
+   <h2>一句話，畫一張賀卡</h2>
+   <div class="bigq" style="--c:var(--blue)">「幫我畫一張重陽節賀卡：淡水河邊夕陽、阿公阿嬤牽手散步，溫暖水彩風，上面寫『重陽快樂 身體健康』」</div>
+   <ul style="padding-left:1.1em;font-size:.95em">
+    <li>不滿意：「<b>再亮一點、字放大</b>」繼續改</li>
+    <li>按 ＋ 放自己的照片：「<b>變成卡通風</b>」</li>
+    <li>長按圖片 → 儲存 → 傳到 LINE</li>
+   </ul>
+   <div class="note">免費版每天能畫的張數有限。不要拿別人的臉亂改再傳出去。</div>
+   <div class="src">出處：Gemini 說明〈使用 Gemini 生成及編輯圖片〉</div>
+  </div>
+ </div>
+</section>
+
+<!-- 22 找美食 -->
+<section class="slide" data-title="找美食和好玩的地方">
+ <div class="inner">
+  <div class="eyebrow" style="--c:var(--blue)"><span class="no">07</span> Gemini 生活用</div>
+  <h2>找高評分美食：<span style="color:var(--blue)">AI 推薦 → 地圖核對</span></h2>
+  <div class="cols">
+   <div><div class="shot"><img src="img/shots/gem_food.jpg" alt="Gemini 推薦淡水捷運站附近餐廳"></div><div class="shotcap">① 問 Gemini：「淡水捷運站附近、評分 4.5 以上、適合長輩的午餐」</div></div>
+   <div><div class="shot" style="border-color:#fff"><img src="img/shots/maps_food.jpg" alt="Google 地圖淡水捷運站美食與評分"></div><div class="shotcap">② 到 Google 地圖核對：星星、評論數、♿ 無障礙、營業時間</div></div>
+  </div>
+  <div class="tip">Google 地圖搜尋後，點上方「<b>評分</b>」選 4.5 以上、「<b>營業時間</b>」選營業中。看到 ♿ 代表輪椅可以進去。</div>
+ </div>
+</section>
+
+<!-- 23 Gemini 其他 -->
+<section class="slide" data-title="Gemini 其他好用法">
+ <div class="inner">
+  <h2>Gemini 還可以這樣用</h2>
+  <div class="cols three">
+   <div class="card"><h3>🎙️ 用說的聊天</h3><p style="font-size:.9em">點對話框右邊的 <b>Live</b>，直接用國語聊。也能打開鏡頭問：「這是什麼？」</p></div>
+   <div class="card"><h3>💊 拍藥袋問重點</h3><p style="font-size:.9em">「字太小，幫我唸這個藥一天吃幾次」</p><div class="warn" style="font-size:.85em">最後一定以<b>藥袋、藥師、醫師</b>說的為準</div></div>
+   <div class="card"><h3>💌 寫祝福語</h3><p style="font-size:.9em">「幫我寫 3 句給孫子的生日祝福，溫暖、20 字內」，寫好複製到 LINE。</p></div>
+  </div>
+  <div class="cols three" style="margin-top:14px">
+   <div class="card"><h3>🗺️ 排半日遊</h3><p style="font-size:.9em">「幫我排淡水半日遊，少走路、有廁所、有午餐」</p></div>
+   <div class="card"><h3>🥬 種菜問題</h3><p style="font-size:.9em">拍葉子：「這是缺水還是生病？要怎麼辦？」</p></div>
+   <div class="card"><h3>📝 整理文件</h3><p style="font-size:.9em">拍通知單：「這張要我做什麼？什麼時候截止？」</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- 24 推薦 App -->
+<section class="slide" id="apps" data-title="推薦 App">
+ <div class="inner">
+  <div class="eyebrow" style="--c:var(--leaf)"><span class="no">08</span> 推薦 App</div>
+  <h2>免費、簡單，iPhone 和 Android 都有</h2>
+  <div class="apps">
+   <div class="app"><img src="img/apps/nhi.png" alt=""><div><b>健保快易通</b><span>看病紀錄、用藥、檢驗結果、虛擬健保卡</span></div></div>
+   <div class="app"><img src="img/apps/whoscall.png" alt=""><div><b>Whoscall</b><span>陌生電話是不是詐騙</span></div></div>
+   <div class="app"><img src="img/apps/npa.png" alt=""><div><b>警政服務</b><span>165 防詐專區、110 報案</span></div></div>
+   <div class="app"><img src="img/apps/fraud.png" alt=""><div><b>網詐通報查詢網</b><span>查可疑網址、簡訊</span></div></div>
+   <div class="app"><img src="img/apps/cwa.png" alt=""><div><b>中央氣象署 W</b><span>天氣、地震、颱風通知</span></div></div>
+   <div class="app"><img src="img/apps/maps.png" alt=""><div><b>Google 地圖</b><span>找路、找美食、看評分</span></div></div>
+   <div class="app"><img src="img/apps/translate.png" alt=""><div><b>Google 翻譯</b><span>拍菜單、對話翻譯</span></div></div>
+   <div class="app"><img src="img/apps/google.png" alt=""><div><b>Google</b><span>智慧鏡頭、AI 模式</span></div></div>
+   <div class="app"><img src="img/apps/gemini.png" alt=""><div><b>Gemini</b><span>聊天、整理影片、畫圖</span></div></div>
+   <div class="app"><img src="img/apps/merlin.png" alt=""><div><b>Merlin 鳥種識別</b><span>錄鳥叫聲就知道是什麼鳥</span></div></div>
+   <div class="app"><img src="img/apps/seek.png" alt=""><div><b>Seek</b><span>拍花草、昆蟲，免註冊</span></div></div>
+   <div class="app"><img src="img/apps/bus.png" alt=""><div><b>台北等公車</b><span>雙北公車幾分鐘到</span></div></div>
+  </div>
+  <div class="src">2026-11-16 查證：以上 App 皆在台灣 App Store 上架（圖示取自 App Store）；Google Play 亦可下載。台北等公車 Android 版請在 Play 商店搜尋確認。</div>
+ </div>
+</section>
+
+<!-- 25 網頁變 App：Android -->
+<section class="slide" id="pwa" data-title="網頁變 App：Android">
+ <div class="inner cols l">
+  <div>
+   <div class="eyebrow" style="--c:var(--leaf)"><span class="no">08</span> 網頁變 App</div>
+   <h2>Android：用 Chrome<br>把網頁放到桌面</h2>
+   <div class="phones" style="--c:var(--leaf);justify-content:flex-start">
+    <div class="ph"><div class="dev"><div class="scr"><div class="tb" style="font-size:.85em">🔒 mattsue1003.github.io <span class="hl">⋮</span></div><div style="padding:8px;font-weight:900">樂齡動腦遊戲館</div><div style="margin:6px 8px;height:50px;background:#f3ead8;border-radius:6px"></div></div></div><div class="cap"><b>①</b>Chrome 打開網頁<br>點右上「⋮」</div></div>
+    <div class="ph"><div class="dev"><div class="scr"><div class="tb">⋮ 選單</div><div class="row">新分頁</div><div class="row">書籤</div><div class="row hl" style="margin:4px">📲 加到主畫面／<br>安裝並建立捷徑</div><div class="row">分享…</div></div></div><div class="cap"><b>②</b>點「加到主畫面」<br>或「安裝」</div></div>
+    <div class="ph"><div class="dev"><div class="scr" style="background:linear-gradient(#cfe3f5,#f7f3ea)"><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:24px 10px"><span style="aspect-ratio:1;background:#fff;border-radius:10px"></span><span style="aspect-ratio:1;background:#fff;border-radius:10px"></span><span class="hl" style="aspect-ratio:1;background:#f6f1e7 url(img/app-games.png) center/cover;border-radius:10px"></span></div><div style="text-align:center;font-weight:900">動腦遊戲館</div></div></div><div class="cap"><b>③</b>桌面多一個圖示<br>點一下就打開</div></div>
+   </div>
+   <div class="demo">示意圖，依 Google Chrome 說明繪製。三星瀏覽器：右下「≡」→ 新增頁面至 → 主螢幕。</div>
+  </div>
+  <div>
+   <div class="card">
+    <h3>可以！網頁也能變 App</h3>
+    <p style="font-size:.9em">不用去商店下載，不佔空間。今天的「動腦遊戲館」、「長者須知」都可以放到桌面。</p>
+    <div class="src">出處：Chrome 說明〈在 Android 上新增網站捷徑〉support.google.com/chrome/answer/9658361</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- 26 iPhone -->
+<section class="slide" data-title="網頁變 App：iPhone">
+ <div class="inner cols l">
+  <div>
+   <div class="eyebrow" style="--c:var(--leaf)"><span class="no">08</span> 網頁變 App</div>
+   <h2>iPhone：用 Safari<br>「加入主畫面」</h2>
+   <div class="phones" style="--c:var(--leaf);justify-content:flex-start">
+    <div class="ph"><div class="dev"><div class="scr"><div style="padding:16px 8px 6px;font-weight:900">樂齡動腦遊戲館</div><div style="margin:6px 8px;height:60px;background:#f3ead8;border-radius:6px"></div><div class="bar"><span>◀</span><span class="hl">⋯</span><span>⧉</span></div></div></div><div class="cap"><b>①</b>Safari 打開網頁<br>點「⋯」→「分享」</div></div>
+    <div class="ph"><div class="dev"><div class="scr"><div class="tb">分享</div><div class="row">拷貝</div><div class="row">加入書籤</div><div class="row hl" style="margin:4px">⊞ 加入主畫面</div><div class="row" style="color:#999">編輯動作…</div></div></div><div class="cap"><b>②</b>往下滑，點<br>「加入主畫面」</div></div>
+    <div class="ph"><div class="dev"><div class="scr"><div class="tb">取消 <span class="hl">加入</span></div><div class="row">動腦遊戲館</div><div class="row">打開為網頁 App <span style="margin-left:auto;background:#34c759;border-radius:10px;width:26px;height:15px;display:inline-block"></span></div></div></div><div class="cap"><b>③</b>打開「網頁 App」<br>按右上「加入」</div></div>
+   </div>
+   <div class="demo">示意圖，依 Apple 支援〈將網站加入 iPhone 主畫面〉繪製；看不到「加入主畫面」→ 最下面「編輯動作」把它加進來。iPhone 的 Chrome 也可以：分享 → 加入主畫面。</div>
+  </div>
+  <div class="photo tilt-r"><span class="tape"></span><img src="img/ai/homescreen.jpg" alt="長輩把網頁加到手機桌面的插畫"><div class="cap">插畫：ChatGPT 生成</div></div>
+ </div>
+</section>
+
+<!-- 27 練習 -->
+<section class="slide" data-title="練習：放到桌面">
+ <div class="inner" style="text-align:center">
+  <div class="eyebrow" style="--c:var(--leaf)">現在就練習</div>
+  <h2>掃 QR Code → 加到桌面</h2>
+  <div style="display:flex;gap:4vw;justify-content:center;flex-wrap:wrap;margin-top:1em">
+   <div class="qr"><img src="img/qr-games.svg" alt="動腦遊戲館 QR"><span>🎮 樂齡動腦遊戲館</span></div>
+   <div class="qr"><img src="img/qr-info.svg" alt="長者須知 QR"><span>📖 長者應該要知道的事</span></div>
+   <div class="qr"><img src="img/qr-deck.svg" alt="今天簡報 QR"><span>📑 今天的簡報</span></div>
+  </div>
+  <p class="lede" style="margin:1em auto 0">完成的人舉手，幫旁邊的同學一起做！</p>
+ </div>
+</section>
+
+<!-- 28 遊戲 -->
+<section class="slide" id="games" data-title="樂齡動腦遊戲館">
+ <div class="inner">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap">
+   <div><div class="eyebrow" style="--c:var(--rose)"><span class="no">09</span> 動動腦</div><h2 style="margin:0">樂齡動腦遊戲館：13 種遊戲</h2>
+   <p style="margin:.2em 0 .5em;font-size:.85em;color:var(--ink2)">懷舊：猜歌・猜懷舊物品・猜景點・猜鳥・猜昆蟲・猜蔬果・俗語接龍｜認知：翻牌・顏色字・數字順序・找不一樣・算錢・買菜記憶</p></div>
+   <a class="btn" href="https://mattsue1003.github.io/elder-brain-games/" target="_blank" rel="noopener">開新視窗 ↗</a>
+  </div>
+  <iframe class="embed" src="https://mattsue1003.github.io/elder-brain-games/?embed" title="樂齡動腦遊戲館" loading="lazy" allow="autoplay; fullscreen"></iframe>
+ </div>
+</section>
+
+<!-- 29 帶遊戲小技巧 -->
+<section class="slide" data-title="一起玩的小技巧">
+ <div class="inner cols">
+  <div>
+   <div class="eyebrow" style="--c:var(--rose)"><span class="no">09</span> 怎麼玩</div>
+   <h2>大家一起玩的 4 個小技巧</h2>
+   <ol class="steps" style="--c:var(--rose)">
+    <li><span><b>分兩隊</b>，答對的隊伍拍手兩下</span></li>
+    <li><span>猜圖選「<b>慢慢變清楚</b>」，越早猜到越厲害</span></li>
+    <li><span>每題答完看「<b>聊一聊</b>」，請一位分享回憶</span></li>
+    <li><span>猜鳥、猜昆蟲時，大家一起<b>學叫聲、學動作</b></span></li>
+   </ol>
+  </div>
+  <div class="cols" style="gap:14px">
+   <div class="photo tilt-l"><img src="img/lens/bird.jpg" alt=""><div class="cap">猜鳥：小白鷺（白鴒鷥）</div></div>
+   <div class="photo tilt-r"><img src="img/lens/old.jpg" alt=""><div class="cap">猜懷舊物品：轉盤電話</div></div>
+  </div>
+ </div>
+</section>
+
+<!-- 30 長者須知 -->
+<section class="slide" id="info" data-title="長者應該要知道的事">
+ <div class="inner">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap">
+   <div><div class="eyebrow" style="--c:var(--plum)"><span class="no">10</span> 長者須知</div><h2 style="margin:0">長者應該要知道的事</h2>
+   <p style="margin:.2em 0 .5em;font-size:.85em;color:var(--ink2)">社會福利・健康資訊・生活大小事・重要電話｜中央＋新北、台北、桃園、新竹、苗栗，每一則附官方出處</p></div>
+   <a class="btn" href="https://mattsue1003.github.io/senior-must-know/" target="_blank" rel="noopener">開新視窗 ↗</a>
+  </div>
+  <iframe class="embed" src="https://mattsue1003.github.io/senior-must-know/" title="長者應該要知道的事" loading="lazy"></iframe>
+ </div>
+</section>
+
+<!-- 31 重點提醒 -->
+<section class="slide" data-title="最近要注意的事">
+ <div class="inner">
+  <div class="eyebrow" style="--c:var(--plum)"><span class="no">10</span> 重點提醒</div>
+  <h2>最近要注意的 6 件事</h2>
+  <div class="cols three">
+   <div class="card"><h3>🚌 敬老卡點數變多</h3><p style="font-size:.85em">新北、台北 115 年 7 月起每月 <b>600 點</b>（原 480 點）。</p><div class="src">新北市社會局、臺北市社會局</div></div>
+   <div class="card"><h3>💉 公費疫苗開打</h3><p style="font-size:.85em">流感、新冠 10/1 起；65 歲以上肺炎鏈球菌疫苗公費 1 劑。到衛生所或合約診所。</p><div class="src">疾管署</div></div>
+   <div class="card"><h3>🚗 70 歲換駕照</h3><p style="font-size:.85em">115/5/31 起新制：70 歲體檢＋2 小時講習，75 歲加認知測驗，之後每 3 年換照。</p><div class="src">交通部公路局</div></div>
+   <div class="card"><h3>🩺 免費健檢</h3><p style="font-size:.85em">65 歲以上每年 1 次成人健檢；可同時做「長者量六力」。帶健保卡到衛生所或診所。</p><div class="src">國民健康署</div></div>
+   <div class="card"><h3>🧓 長照 1966</h3><p style="font-size:.85em">照顧、交通接送、輔具、喘息四包錢。家裡長輩需要幫忙，先打 <b>1966</b>。</p><div class="src">衛福部長照專區</div></div>
+   <div class="card"><h3>📞 先掛斷、再查證</h3><p style="font-size:.85em">說你帳戶有問題、要你匯款、要驗證碼的，都先掛斷，打 <b>165</b>。</p><div class="src">165 全民防騙</div></div>
+  </div>
+  <p class="src">規定與金額可能調整，詳細條件與官方連結都在「長者應該要知道的事」裡，查證日 2026-11-16。</p>
+ </div>
+</section>
+
+<!-- 32 課後任務 -->
+<section class="slide" data-title="回家小任務">
+ <div class="inner cols">
+  <div>
+   <div class="eyebrow" style="--c:var(--ochre)">回家小任務</div>
+   <h2>這禮拜，試試看這 5 件事</h2>
+   <ul style="list-style:none;padding:0;font-size:1.05em">
+    <li>☐ 加入班級 LINE 社群，換一個暱稱</li>
+    <li>☐ 用智慧鏡頭拍<b>一種花、一種鳥</b></li>
+    <li>☐ 用 AI 模式問一個生活問題</li>
+    <li>☐ 用 Gemini 整理一支 YouTube 影片</li>
+    <li>☐ 把「動腦遊戲館」放到桌面，每天玩一個</li>
+   </ul>
+   <div class="tip">做完的，下次上課拿手機給大家看！</div>
+  </div>
+  <div class="photo tilt-r"><span class="tape"></span><img src="img/ai/cover.jpg" alt=""><div class="cap">一起學、一起玩，手機就是好幫手</div></div>
+ </div>
+</section>
+
+<!-- 33 謝謝 -->
+<section class="slide" data-title="謝謝大家">
+ <div class="inner" style="text-align:center">
+  <h2 style="font-size:3em">謝謝大家！</h2>
+  <p class="lede" style="margin:0 auto 1em">有問題歡迎到粉絲專頁留言，或掃簡報 QR Code 回家複習。</p>
+  <div style="display:flex;gap:3vw;justify-content:center;flex-wrap:wrap">
+   <a class="qr" href="https://www.facebook.com/profile.php?id=100063748491881" target="_blank" rel="noopener" style="text-decoration:none;color:inherit"><img src="img/qr-fb.svg" alt="粉絲專頁 QR"><span>鍾孟修 粉絲專頁</span></a>
+   <div class="qr"><img src="img/qr-deck.svg" alt="簡報 QR"><span>今天的簡報</span></div>
+   <div class="qr"><img src="img/qr-games.svg" alt="遊戲館 QR"><span>動腦遊戲館</span></div>
+  </div>
+  <p class="src" style="margin-top:2em">照片：Wikimedia Commons（授權見遊戲館「圖片來源」頁；杜鵑花 ForestWander, CC BY-SA 3.0 US）｜插畫：ChatGPT 生成｜實際畫面：講師 2026-11-16 實測｜App 圖示：App Store</p>
+ </div>
+</section>
+
+<div id="nav">
+ <button id="prev" aria-label="上一頁">▲</button>
+ <input id="pg" inputmode="numeric" aria-label="跳到第幾頁"><span id="tot" style="font-weight:700"></span>
+ <button id="next" aria-label="下一頁">▼</button>
+ <button id="tocBtn" aria-label="目錄">☰ 目錄</button>
+</div>
+<div id="toc"><div class="box"><h2 style="font-size:1.5em;margin:0 0 .5em">目錄（點一下跳過去）</h2><div class="grid" id="tocList"></div></div></div>
+
+<script>
+const S=[...document.querySelectorAll(".slide")];
+S.forEach((s,i)=>{s.dataset.n=i+1});
+const pg=document.getElementById("pg"),tot=document.getElementById("tot");tot.textContent="/ "+S.length;
+let cur=0;
+function go(i){i=Math.max(0,Math.min(S.length-1,i));S[i].scrollIntoView({behavior:"smooth"});}
+const find=h=>{h=decodeURIComponent(h||"").replace(/^#/,"");if(!h)return null;const m=h.match(/^s(\d+)$/);return m?S[+m[1]-1]:document.getElementById(h)};
+let ready=false;const initial=location.hash;
+setTimeout(()=>{const t=find(initial);if(t)t.scrollIntoView({behavior:"instant"});setTimeout(()=>ready=true,400)},250);
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&e.intersectionRatio>.35){cur=+e.target.dataset.n-1;pg.value=cur+1;
+  document.getElementById("prog").style.width=((cur+1)/S.length*100)+"%";if(ready)history.replaceState(null,"","#s"+e.target.dataset.n);
+  document.querySelectorAll("#tocList a").forEach((a,k)=>a.classList.toggle("cur",k===cur))}})},{threshold:[.35,.6]});
+S.forEach(s=>io.observe(s));
+addEventListener("hashchange",()=>{const t=find(location.hash);if(t)t.scrollIntoView({behavior:"instant"})});
+document.getElementById("prev").onclick=()=>go(cur-1);
+document.getElementById("next").onclick=()=>go(cur+1);
+pg.onkeydown=e=>{if(e.key==="Enter"){go((+pg.value||1)-1);pg.blur()}};
+pg.onchange=()=>go((+pg.value||1)-1);
+const toc=document.getElementById("toc");
+document.getElementById("tocList").innerHTML=S.map((s,i)=>`<a href="#s${i+1}"><i>${i+1}</i>${s.dataset.title}</a>`).join("");
+document.getElementById("tocBtn").onclick=()=>toc.classList.add("show");
+toc.onclick=e=>{if(e.target===toc||e.target.closest("a"))toc.classList.remove("show")};
+addEventListener("keydown",e=>{
+  if(e.target.tagName==="INPUT"||e.target.tagName==="IFRAME")return;
+  if(["ArrowDown","PageDown"," "].includes(e.key)){e.preventDefault();go(cur+1)}
+  else if(["ArrowUp","PageUp"].includes(e.key)){e.preventDefault();go(cur-1)}
+  else if(e.key==="Home"){e.preventDefault();go(0)}else if(e.key==="End"){e.preventDefault();go(S.length-1)}
+  else if(e.key==="Escape")toc.classList.remove("show");
+  else if(e.key==="t"||e.key==="T")toc.classList.toggle("show");
+});
+</script>
+</body>
+</html>
