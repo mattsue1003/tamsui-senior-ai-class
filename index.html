@@ -108,10 +108,11 @@ body.is-ios .mydev.i,body.is-and .mydev.a{display:inline}
 .menuwrap .tr{position:absolute;left:9%;right:9%;line-height:1.3;font-weight:900;background:rgba(255,255,255,.92);color:#1b3d75;border-radius:4px;padding:0 .3em;font-size:.82em;display:flex;justify-content:space-between;opacity:0;transition:opacity .4s}
 .menuwrap.on .tr{opacity:1}
 /* nav */
-#nav{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:30;display:flex;gap:6px;align-items:center;background:rgba(255,253,248,.95);border:1px solid var(--line);border-radius:999px;padding:6px 8px;box-shadow:var(--shadow);font-size:16px}
-#nav button{border:0;background:transparent;font:inherit;font-weight:900;min-width:44px;min-height:44px;border-radius:999px;cursor:pointer}
+#nav{position:fixed;right:12px;bottom:10px;z-index:30;display:flex;gap:2px;align-items:center;background:rgba(255,253,248,.82);border:1px solid var(--line);border-radius:999px;padding:2px 4px;box-shadow:0 1px 4px rgba(60,40,20,.12);font-size:13px;opacity:.85}
+#nav:hover,#nav:focus-within{opacity:1}
+#nav button{border:0;background:transparent;font:inherit;font-weight:900;min-width:36px;min-height:36px;border-radius:999px;cursor:pointer}
 #nav button:hover{background:#f1ead9}
-#nav input{width:3.2em;text-align:center;font:inherit;font-weight:900;border:1.5px solid var(--line);border-radius:8px;padding:6px 2px}
+#nav input{width:2.6em;text-align:center;font:inherit;font-weight:900;border:1.5px solid var(--line);border-radius:8px;padding:6px 2px}
 #toc{position:fixed;inset:0;z-index:40;background:rgba(38,34,30,.5);display:none;align-items:center;justify-content:center}
 #toc.show{display:flex}
 #toc .box{background:var(--card);width:min(1100px,94vw);max-height:86vh;overflow:auto;border-radius:12px;padding:20px 24px;font-size:18px}
@@ -121,7 +122,7 @@ body.is-ios .mydev.i,body.is-and .mydev.a{display:inline}
 #toc a i{font-style:normal;color:var(--ink2);display:inline-block;width:2.2em}
 .progress{position:fixed;top:0;left:0;height:4px;background:var(--rose);z-index:31;width:0;transition:width .2s}
 @media (max-width:900px){
-  body{font-size:18px}
+  body{font-size:20px}
   .slide{padding:7vh 16px 110px;min-height:auto}
   html{scroll-snap-type:none}
   .cols,.cols.l,.cols.r,.cols.three{grid-template-columns:1fr}
@@ -201,12 +202,13 @@ body.is-ios .mydev.i,body.is-and .mydev.a{display:inline}
    <h2>上課前，手機先做 3 件事</h2>
    <ol class="steps" style="--c:var(--leaf)">
     <li><span>連上 <b>Wi-Fi</b>，電量 50% 以上</span></li>
-    <li><span>把 <b>LINE</b>、<b>Google</b>、<b>Gemini</b>、<b>Google 地圖</b> 更新到最新版：點右邊按鈕，商店出現「<b>更新</b>」就按下去（出現「開啟」代表已經是最新版）</span></li>
+    <li><span>先把 <b>Chrome 瀏覽器</b>，還有 <b>LINE</b>、<b>Google</b>、<b>Gemini</b>、<b>Google 地圖</b> 下載或更新到最新版：點這頁的「更新」按鈕，商店出現「<b>更新</b>」就按下去（出現「開啟」代表已經是最新版）</span></li>
     <li><span>字太小？<b>iPhone</b>：設定 → 螢幕顯示與亮度 → 文字大小；<b>Android</b>：設定 → 顯示 → 字型大小（各品牌名稱略不同）</span></li>
    </ol>
    <div class="note">LINE 從 2026 年 3 月起分批換新畫面，所以大家的手機<b>可能長得不一樣</b>，沒關係，找圖示就對了。</div>
   </div>
   <div class="apps upd" style="grid-template-columns:1fr 1fr">
+   <div class="app" data-app="chrome" style="grid-column:1/-1"><img src="img/apps/chrome.png" alt=""><div><b>Chrome 瀏覽器</b><span>上網、智慧鏡頭、網頁變 App</span></div></div>
    <div class="app" data-app="line"><img src="img/apps/line.png" alt=""><div><b>LINE</b><span>筆記本群組、掃 QR Code</span></div></div>
    <div class="app" data-app="google"><img src="img/apps/google.png" alt=""><div><b>Google</b><span>智慧鏡頭、AI 模式</span></div></div>
    <div class="app" data-app="gemini"><img src="img/apps/gemini.png" alt=""><div><b>Gemini</b><span>整理影片、畫圖</span></div></div>
@@ -386,6 +388,34 @@ body.is-ios .mydev.i,body.is-and .mydev.a{display:inline}
  </div>
 </section>
 
+<!-- Chrome 裡的智慧鏡頭 -->
+<section class="slide" data-title="Chrome 裡用智慧鏡頭">
+ <div class="inner cols l">
+  <div>
+   <div class="eyebrow" style="--c:var(--rose)"><span class="no">03</span> Chrome 也有智慧鏡頭</div>
+   <h2>上網看到不懂的，<br>在 Chrome 直接查</h2>
+   <div class="phones" style="--c:var(--rose);justify-content:flex-start">
+    <div class="ph"><div class="dev"><div class="scr"><div class="tb" style="font-size:.85em">🔒 新聞網站 <span>⋮</span></div><div style="padding:6px 8px;font-weight:900">今天去哪裡玩？</div><div class="hl" style="margin:6px 8px;height:70px;background:url(img/lens/flower.jpg) center/cover;border-radius:6px"></div><div style="margin:0 8px;height:6px;background:#eee;border-radius:3px"></div></div></div><div class="cap"><b>①</b>看到圖片<br><b style="display:inline;font-size:1em">手指按住不放</b></div></div>
+    <div class="ph"><div class="dev"><div class="scr"><div style="margin:8px;height:54px;background:url(img/lens/flower.jpg) center/cover;border-radius:6px"></div><div class="row">在新分頁開啟圖片</div><div class="row">下載圖片</div><div class="row hl" style="margin:4px">🔍 使用 Google 智慧鏡頭搜尋圖片</div></div></div><div class="cap"><b>②</b>點「使用 Google<br>智慧鏡頭搜尋圖片」</div></div>
+    <div class="ph"><div class="dev"><div class="scr"><div class="tb" style="font-size:.85em">新分頁</div><div style="margin:10px 8px;border:1.5px solid #ddd;border-radius:99px;padding:5px 8px;display:flex;justify-content:space-between">搜尋或輸入網址 <span class="hl">📷</span></div><div style="padding:4px 8px;color:#777">相機拍實物也可以</div></div></div><div class="cap"><b>③</b>開新分頁<br>點搜尋列的<b style="display:inline;font-size:1em">彩色相機</b></div></div>
+   </div>
+   <div class="demo">示意圖，依 Google Chrome 說明繪製；每台手機的選單文字可能略有不同。</div>
+  </div>
+  <div>
+   <div class="card">
+    <h3>不用換 App，看到就查</h3>
+    <ul style="font-size:.9em;padding-left:1.1em">
+     <li>看新聞看到<b>不認識的花、景點</b></li>
+     <li>網購看到<b>想比價的東西</b></li>
+     <li>看到<b>外國字</b>想知道意思</li>
+    </ul>
+    <div class="tip">第一次用，Chrome 會問「要不要讓智慧鏡頭處理網頁」，按「<b>同意／繼續</b>」就好。</div>
+    <div class="src">出處：Chrome 說明〈使用 Chrome 內建 Google 智慧鏡頭搜尋〉support.google.com/chrome/answer/15086890；〈透過 Google 用圖片搜尋〉support.google.com/websearch/answer/1325808</div>
+   </div>
+  </div>
+ </div>
+</section>
+
 <!-- 12 實測：鳥 -->
 <section class="slide" data-title="實測：拍鳥">
  <div class="inner cols">
@@ -439,7 +469,7 @@ body.is-ios .mydev.i,body.is-and .mydev.a{display:inline}
     <li>可以拍<b>衣服、包包</b>找同款</li>
     <li>可以拍<b>名片</b>，把電話、地址直接存起來</li>
    </ul>
-   <div class="tip">拍藥袋、說明書：用「選取文字」→「<b>聆聽</b>」，手機會唸給你聽。</div>
+   <div class="tip">拍藥袋：<b>先按快門拍下來</b> → 點字 → 「選取文字」→「<b>聆聽</b>」唸給你聽（Android 最穩）。讀不到字：袋子<b>壓平</b>、<b>關閃光燈</b>、斜一點避開反光。iPhone 也可用相機的「<b>原況文字</b>」選字後按「朗讀」。</div>
    <div class="src">出處：Google 搜尋說明〈使用 Google 智慧鏡頭〉（可辨識物品、選取文字）</div>
   </div>
  </div>
@@ -717,7 +747,7 @@ body.is-ios .mydev.i,body.is-and .mydev.a{display:inline}
    <h2>大家一起玩的 4 個小技巧</h2>
    <ol class="steps" style="--c:var(--rose)">
     <li><span><b>分兩隊</b>，答對的隊伍拍手兩下</span></li>
-    <li><span>猜圖選「<b>慢慢變清楚</b>」，越早猜到越厲害</span></li>
+    <li><span>猜圖想不出來，按「<b>💡 提示</b>」大家一起想</span></li>
     <li><span>每題答完看「<b>聊一聊</b>」，請一位分享回憶</span></li>
     <li><span>猜鳥、猜昆蟲時，大家一起<b>學叫聲、學動作</b></span></li>
    </ol>
@@ -832,7 +862,7 @@ addEventListener("keydown",e=>{
 
 /* 商店下載／更新連結（2026-11-16 逐一開過確認） */
 const STORE={
- line:["443904275","jp.naver.line.android"],google:["284815942","com.google.android.googlequicksearchbox"],
+ chrome:["535886823","com.android.chrome"],line:["443904275","jp.naver.line.android"],google:["284815942","com.google.android.googlequicksearchbox"],
  gemini:["6477489729","com.google.android.apps.bard"],maps:["585027354","com.google.android.apps.maps"],
  translate:["414706506","com.google.android.apps.translate"],nhi:["578186283","com.nhiApp.v1"],
  whoscall:["929968679","gogolook.callgogolook2"],npa:["544121843","tw.gov.npa.callservice"],
